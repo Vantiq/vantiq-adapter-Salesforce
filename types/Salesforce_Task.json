@@ -1,0 +1,65 @@
+{
+    "name": "Salesforce_Task",
+    "naturalKey": ["Id"],
+    "indexes": [
+        { 
+            "keys": ["Id"],
+            "options": { "unique": true }
+        }
+    ],
+    "properties": {
+        "Id": { "type": "String", "required": true },
+        "IsDeleted": { "type": "Boolean" },
+
+        "AccountId": { "type": "String" },
+        "AccountId_raw": { "type": "String" },
+        "ActivityDate": { "type": "DateTime" },
+        "CallDisposition": { "type": "String" },
+        "CallDurationInSeconds": { "type": "Integer" },
+        "CallObject": { "type": "String" },
+        "CallType": { "type": "String" },
+        "Description": { "type": "String" },
+        "IsArchived": { "type": "Boolean" },
+        "IsClosed": { "type": "Boolean" },
+        "IsRecurrence": { "type": "Boolean" },
+        "IsReminderSet": { "type": "Boolean" },
+        "OwnerId": { "type": "String" },
+        "OwnerId_raw": { "type": "String" },
+        "Priority": { "type": "String" },
+        "RecurrenceActivityId": { "type": "String" },
+        "RecurrenceActivityId_raw": { "type": "String" },
+        "RecurrenceDayOfMonth": { "type": "Integer" },
+        "RecurrenceDayOfWeekMask": { "type": "Integer" },
+        "RecurrenceEndDateOnly": { "type": "DateTime" },
+        "RecurrenceInstance": { "type": "String" },
+        "RecurrenceInterval": { "type": "Integer" },
+        "RecurrenceMonthOfYear": { "type": "Integer" },
+        "RecurrenceStartDateOnly": { "type": "DateTime" },
+        "RecurrenceTimeZoneSidKey": { "type": "String" },
+        "RecurrenceType": { "type": "String" },
+        "ReminderDateTime": { "type": "DateTime" },
+        "Status": { "type": "String" },
+        "Subject": { "type": "String" },
+        "WhatId": { "type": "String" },
+        "WhatId_raw": { "type": "String" },
+        "WhoId": { "type": "String" },
+        "WhoId_raw": { "type": "String" },
+
+        "attributes__type": { "type": "String" },
+        "attributes__url": { "type": "String" },
+        "CreatedById": { "type": "String" },
+        "CreatedById_raw": { "type": "String" },
+        "CreatedDate": { "type": "DateTime" },
+        "LastActivityDate": { "type": "DateTime" },
+        "LastModifiedById": { "type": "String" },
+        "LastModifiedById_raw": { "type": "String" },
+        "LastModifiedDate": { "type": "DateTime" },
+        "SystemModstamp": { "type": "DateTime" }
+    },
+    "foreignKeys" : [
+        {
+            "type" : "Salesforce_Account",
+            "keys" : [ { "property" : "ConvertedAccountId_raw", "targetProperty" : "Id" } ]
+        }
+    ]
+}

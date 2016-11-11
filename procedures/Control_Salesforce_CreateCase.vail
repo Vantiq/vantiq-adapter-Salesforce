@@ -1,0 +1,3 @@
+PROCEDURE Control_Salesforce_CreateCase(case)
+
+Connector_SendAction("Salesforce", "CreateCase", [case])

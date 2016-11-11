@@ -1,0 +1,8 @@
+PROCEDURE Control_Salesforce_UpdateCustomObject(obj)
+
+var payload = {
+    Type: typeName, 
+    Object: obj
+}
+
+Connector_SendAction("Salesforce", "UpdateCustomObject", [payload])

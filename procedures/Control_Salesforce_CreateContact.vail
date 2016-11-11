@@ -1,0 +1,3 @@
+PROCEDURE Control_Salesforce_CreateContact(contact)
+
+Connector_SendAction("Salesforce", "CreateContact", [contact])

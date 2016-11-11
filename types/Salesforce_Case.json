@@ -1,0 +1,61 @@
+{
+    "name": "Salesforce_Case",
+    "naturalKey": ["Id"],
+    "indexes": [
+        { 
+            "keys": ["Id"],
+            "options": { "unique": true }
+        }
+    ],
+    "properties": {
+        "Id": { "type": "String", "required": true },
+        "IsDeleted": { "type": "Boolean" },
+
+        "AccountId": { "type": "String" },
+        "AccountId_raw": { "type": "String" },
+        "AssetId": { "type": "String" },
+        "AssetId_raw": { "type": "String" },
+        "CaseNumber": { "type": "String" },
+        "CloseDate": { "type": "DateTime" },
+        "ContactId": { "type": "String" },
+        "ContactId_raw": { "type": "String" },
+        "Description": { "type": "String" },
+        "IsClosed": { "type": "Boolean" },
+        "IsEscalated": { "type": "Boolean" },
+        "Origin": { "type": "String" },
+        "OwnerId": { "type": "String" },
+        "OwnerId_raw": { "type": "String" },
+        "ParentId": { "type": "String" },
+        "ParentId_raw": { "type": "String" },
+        "Priority": { "type": "String" },
+        "Reason": { "type": "String" },
+        "Status": { "type": "String" },
+        "Subject": { "type": "String" },
+        "SuppliedCompany": { "type": "String" },
+        "SuppliedEmail": { "type": "String" },
+        "SuppliedName": { "type": "String" },
+        "SuppliedPhone": { "type": "String" },
+        "Type": { "type": "String" },
+
+        "attributes__type": { "type": "String" },
+        "attributes__url": { "type": "String" },
+        "CreatedById": { "type": "String" },
+        "CreatedById_raw": { "type": "String" },
+        "CreatedDate": { "type": "DateTime" },
+        "LastActivityDate": { "type": "DateTime" },
+        "LastModifiedById": { "type": "String" },
+        "LastModifiedById_raw": { "type": "String" },
+        "LastModifiedDate": { "type": "DateTime" },
+        "SystemModstamp": { "type": "DateTime" }
+    },
+    "foreignKeys" : [
+        {
+            "type" : "Salesforce_Account",
+            "keys" : [ { "property" : "AccountId_raw", "targetProperty" : "Id" } ]
+        }, 
+        {
+            "type" : "Salesforce_Contact",
+            "keys" : [ { "property" : "ContactId_raw", "targetProperty" : "Id" } ]
+        }
+    ]
+}

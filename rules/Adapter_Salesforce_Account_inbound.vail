@@ -1,0 +1,22 @@
+RULE Adapter_Salesforce_Account_inbound
+
+//--------------------------------------------------------
+// Listen for data on "/system/adapter/<type>/inbound" topic
+//--------------------------------------------------------
+WHEN PUBLISH OCCURS ON "/system/adapter/Salesforce_Account/inbound" AS m
+
+//--------------------------------------------------------
+// Perform any data tranformations
+//--------------------------------------------------------
+var obj = m.newValue
+var key = obj.Id
+
+var obj = Adapter_Salesforce_ParseDateFields(obj, [])
+
+// Remove extraneous type that is returned from SFDC queries
+obj.remove("type")
+
+//--------------------------------------------------------
+// Save the data
+//--------------------------------------------------------
+UPSERT Salesforce_Account(obj)

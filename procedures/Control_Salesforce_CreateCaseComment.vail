@@ -1,0 +1,8 @@
+PROCEDURE Control_Salesforce_CreateCaseComment(caseId, comment)
+
+var commentObj = {
+    CaseId: caseId,
+    Comment: comment
+}
+
+Connector_SendAction("Salesforce", "CreateCaseComment", [commentObj])

@@ -1,0 +1,3 @@
+PROCEDURE Control_Salesforce_CreateAccount(account)
+
+Connector_SendAction("Salesforce", "CreateAccount", [account])

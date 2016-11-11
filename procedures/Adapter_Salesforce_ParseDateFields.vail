@@ -1,0 +1,31 @@
+PROCEDURE Adapter_Salesforce_ParseDateFields(obj, dateFields)
+
+// Standard SFDC Fields
+var standardDateFields = [ 
+    "CreatedDate", 
+    "LastActivityDate", 
+    "LastModifiedDate", 
+    "SystemModstamp" 
+]
+
+var allDateFields = concat(dateFields, standardDateFields)
+
+// Parse full DateTimes
+for(dtField in allDateFields) {
+    if(obj[dtField] && length(obj[dtField]) > 0) {
+
+        var dateStr = obj[dtField]
+        if(dateStr.length() > 10) {
+            // SFDC Date Time String: yyyy-MM-ddTHH:mm:ss.SSSZ
+            dateStr = concat(dateStr.slice(0, 19), "Z")
+        } else {
+            // SFDC Date String: yyyy-MM-dd
+            dateStr = concat(dateStr, "T00:00:00Z")
+        }
+
+        // Expected Vantiq date format: yyyy-MM-ddTHH:mm:ssZ
+        obj[dtField] = date(dateStr, "ISO", "date")
+    }
+}
+
+RETURN obj

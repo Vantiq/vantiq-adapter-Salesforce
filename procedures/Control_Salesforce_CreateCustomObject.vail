@@ -1,0 +1,8 @@
+PROCEDURE Control_Salesforce_CreateCustomObject(typeName, obj)
+
+var payload = {
+    Type: typeName,
+    Object: obj
+}
+
+Connector_SendAction("Salesforce", "CreateCustomObject", [payload])

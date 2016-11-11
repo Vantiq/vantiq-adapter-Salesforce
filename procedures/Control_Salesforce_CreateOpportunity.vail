@@ -1,0 +1,3 @@
+PROCEDURE Control_Salesforce_CreateOpportunity(opportunity)
+
+Connector_SendAction("Salesforce", "CreateOpportunity", [opportunity])

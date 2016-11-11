@@ -1,0 +1,3 @@
+PROCEDURE Control_Salesforce_UpdateContact(contact)
+
+Connector_SendAction("Salesforce", "UpdateContact", [contact])

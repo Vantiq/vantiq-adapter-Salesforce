@@ -1,0 +1,3 @@
+PROCEDURE Control_Salesforce_CreateLead(lead)
+
+Connector_SendAction("Salesforce", "CreateLead", [lead])

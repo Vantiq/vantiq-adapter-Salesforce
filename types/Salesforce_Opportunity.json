@@ -1,0 +1,66 @@
+{
+    "name": "Salesforce_Opportunity",
+    "naturalKey": ["Id"],
+    "indexes": [
+        { 
+            "keys": ["Id"],
+            "options": { "unique": true }
+        }
+    ],
+    "properties": {
+        "Id": { "type": "String", "required": true },
+        "IsDeleted": { "type": "Boolean" },
+
+        "AccountId": { "type": "String" },
+        "AccountId_raw": { "type": "String" },
+        "Amount": { "type": "Real" },
+        "CampaignId": { "type": "String" },
+        "CampaignId_raw": { "type": "String" },
+        "CloseDate": { "type": "DateTime" },
+        "Description": { "type": "String" },
+        "ExpectedRevenue": { "type": "Real" },
+        "Fiscal": { "type": "String" },
+        "FiscalQuarter": { "type": "Integer" },
+        "FiscalYear": { "type": "Integer" },
+        "ForecastCategory": { "type": "String" },
+        "ForecastCategoryName": { "type": "String" },
+        "HasOpportunityLineItem": { "type": "Boolean" },
+        "IsClosed": { "type": "Boolean" },
+        "IsPrivate": { "type": "Boolean" },
+        "IsWon": { "type": "Boolean" },
+        "LeadSource": { "type": "String" },
+        "Name": { "type": "String" },
+        "NextStep": { "type": "String" },
+        "OwnerId": { "type": "String" },
+        "OwnerId_raw": { "type": "String" },
+        "Pricebook2Id": { "type": "String" },
+        "Pricebook2Id_raw": { "type": "String" },
+        "Probability": { "type": "Real" },
+        "StageName": { "type": "String" },
+        "TotalOpportunityQuantity": { "type": "Real" },
+        "Type": { "type": "String" },
+
+        "attributes__type": { "type": "String" },
+        "attributes__url": { "type": "String" },
+        "CreatedById": { "type": "String" },
+        "CreatedById_raw": { "type": "String" },
+        "CreatedDate": { "type": "DateTime" },
+        "LastActivityDate": { "type": "DateTime" },
+        "LastModifiedById": { "type": "String" },
+        "LastModifiedById_raw": { "type": "String" },
+        "LastModifiedDate": { "type": "DateTime" },
+        "SystemModstamp": { "type": "DateTime" }
+    },
+    "foreignKeys" : [
+        {
+            "type" : "Salesforce_Account",
+            "keys" : [ { "property" : "AccountId_raw", "targetProperty" : "Id" } ]
+        }
+    ]
+}
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+{
+    "name": "Salesforce_Contact",
+    "naturalKey": ["Id"],
+    "indexes": [
+        { 
+            "keys": ["Id"],
+            "options": { "unique": true }
+        }
+    ],
+    "properties": {
+        "Id": { "type": "String", "required": true },
+        "IsDeleted": { "type": "Boolean" },
+
+        "AccountId": { "type": "String" },
+        "AccountId_raw": { "type": "String" },
+        "AssistantName": { "type": "String" },
+        "AssistantPhone": { "type": "String" },
+        "Birthdate": { "type": "String" },
+        "CleanStatus": { "type": "String" },
+        "Department": { "type": "String" },
+        "Description": { "type": "String" },
+        "Email": { "type": "String" },
+        "EmailBouncedDate": { "type": "DateTime" },
+        "EmailBouncedReason": { "type": "String" },
+        "Fax": { "type": "String" },
+        "FirstName": { "type": "String" },
+        "HomePhone": { "type": "String" },
+        "JigsawContactId": { "type": "String" },
+        "LastCURequestDate": { "type": "DateTime" },
+        "LastCUUpdateDate": { "type": "DateTime" },
+        "LastName": { "type": "String" },
+        "LeadSource": { "type": "String" },
+        "MailingCity": { "type": "String" },
+        "MailingCountry": { "type": "String" },
+        "MailingPostalCode": { "type": "String" },
+        "MailingState": { "type": "String" },
+        "MailingStreet": { "type": "String" },
+        "MasterRecordId": { "type": "String" },
+        "MasterRecordId_raw": { "type": "String" },
+        "MobilePhone": { "type": "String" },
+        "Name": { "type": "String" },
+        "OtherCity": { "type": "String" },
+        "OtherCountry": { "type": "String" },
+        "OtherPhone": { "type": "String" },
+        "OtherPostalCode": { "type": "String" },
+        "OtherState": { "type": "String" },
+        "OtherStreet": { "type": "String" },
+        "OwnerId": { "type": "String" },
+        "OwnerId_raw": { "type": "String" },
+        "Phone": { "type": "String" },
+        "ReportsToId": { "type": "String" },
+        "ReportsToId_raw": { "type": "String" },
+        "Salutation": { "type": "String" },
+        "Title": { "type": "String" },
+
+        "attributes__type": { "type": "String" },
+        "attributes__url": { "type": "String" },
+        "CreatedById": { "type": "String" },
+        "CreatedById_raw": { "type": "String" },
+        "CreatedDate": { "type": "DateTime" },
+        "LastActivityDate": { "type": "DateTime" },
+        "LastModifiedById": { "type": "String" },
+        "LastModifiedById_raw": { "type": "String" },
+        "LastModifiedDate": { "type": "DateTime" },
+        "SystemModstamp": { "type": "DateTime" }
+    },
+    "foreignKeys" : [
+        {
+            "type" : "Salesforce_Account",
+            "keys" : [ { "property" : "AccountId_raw", "targetProperty" : "Id" } ]
+        }
+    ]
+}
