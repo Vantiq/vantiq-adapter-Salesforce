@@ -5,4 +5,4 @@ var commentObj = {
     Comment: comment
 }
 
-Connector_SendAction("Salesforce", "CreateCaseComment", [commentObj])
+Adapter_SendAction("Salesforce", "CreateCaseComment", [commentObj])

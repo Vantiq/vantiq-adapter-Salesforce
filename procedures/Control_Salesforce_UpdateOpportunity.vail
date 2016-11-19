@@ -1,3 +1,3 @@
 PROCEDURE Control_Salesforce_UpdateOpportunity(opportunity)
 
-Connector_SendAction("Salesforce", "UpdateOpportunity", [opportunity])
+Adapter_SendAction("Salesforce", "UpdateOpportunity", [opportunity])

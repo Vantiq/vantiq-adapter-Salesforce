@@ -5,4 +5,4 @@ var payload = {
     Object: obj
 }
 
-Connector_SendAction("Salesforce", "UpdateCustomObject", [payload])
+Adapter_SendAction("Salesforce", "UpdateCustomObject", [payload])
